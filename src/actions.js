@@ -71,8 +71,8 @@ export function setRestaurants(restaurants) {
 }
 
 export function loadRestaurants() {
-  return async (dispatch, getStore) => {
-    const { selectedRegionId, selectedCategoryId, regions } = getStore();
+  return async (dispatch, getState) => {
+    const { selectedRegionId, selectedCategoryId, regions } = getState();
 
     if (!selectedRegionId || !selectedCategoryId) {
       return;

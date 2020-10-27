@@ -15,7 +15,12 @@ export default function Regions({ selectedCategoryId, categories, onClick }) {
             type="button"
             onClick={() => onClick(id)}
           >
-            {name + (id === selectedCategoryId ? '(V)' : '')}
+            {name}
+            {selectedCategoryId ? (
+              <>
+                {(id === selectedCategoryId ? '(V)' : null)}
+              </>
+            ) : null}
           </button>
         </li>
       ))}

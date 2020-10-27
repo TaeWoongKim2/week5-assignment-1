@@ -6,11 +6,15 @@ import { selectCategory, loadRestaurants } from './actions';
 
 import Categories from './Categories';
 
+import { get } from './utils';
+
 export default function CategoriesContainer() {
-  const { selectedCategoryId, categories } = useSelector((state) => ({
-    selectedCategoryId: state.selectedCategoryId,
-    categories: state.categories,
-  }));
+  // const { selectedCategoryId, categories } = useSelector((state) => ({
+  //   selectedCategoryId: state.selectedCategoryId,
+  //   categories: state.categories,
+  // }));
+  const categories = useSelector(get('categories'));
+  const selectedCategoryId = useSelector(get('selectedCategoryId'));
 
   const dispatch = useDispatch();
 
